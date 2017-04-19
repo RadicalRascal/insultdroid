@@ -25,18 +25,17 @@ std::string randspeech::getSpeechLine(const std::string &fileLocation){
     int random_integer = uni(rng);
     
     string line;
-    for(int i = 0; i <= filelength; ++i){
+    for(int i = 0; i <= filelength; ++i){ // iterate through file and reach the random index
         getline(inputfile, line);
         if(i == random_integer){
-            getline(inputfile, line);
+            getline(inputfile, line); // set the line to the random indexed line
             break;
         }
         
     }
     
     
-    spokenLine += line;
+    spokenLine += line; //concatenate the the vocab type with the line read
     
-    cout << spokenLine <<endl;
     return spokenLine;
 }

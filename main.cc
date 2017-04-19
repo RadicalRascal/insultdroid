@@ -4,18 +4,18 @@
 
 using namespace std;
 
-string linelocation ="/Users/Leif/Documents/workspace/ROBOT/Phrases/statement.txt";
+string linelocation ="/Users/Leif/Documents/workspace/ROBOT/Phrases/";
+
 
 int main(int argc, char* argv[]){
     
-    
+    linelocation = linelocation + argv[1] +".txt";
     
     randspeech tester;
-    
-    tester.getSpeechLine(linelocation);
-    
-    //arg 1 will be the input text file that will be read
+    string output;
+    output = tester.getSpeechLine(linelocation);
     
     
+    cout<< output <<endl;
 
 }
