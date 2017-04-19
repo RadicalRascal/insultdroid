@@ -4,13 +4,17 @@
 
 using namespace std;
 
+string linelocation ="/Users/Leif/Documents/workspace/ROBOT/Phrases/statement.txt";
+
 int main(int argc, char* argv[]){
     
-    for(unsigned int i = 1; i < argc; i++){
-        //create new speech object per file that is read
-        
-        
-    }
+    
+    
+    randspeech tester;
+    
+    tester.getSpeechLine(linelocation);
+    
+    //arg 1 will be the input text file that will be read
     
     
 

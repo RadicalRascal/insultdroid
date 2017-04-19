@@ -7,7 +7,36 @@ randspeech::randspeech(): filelength(0) {}
 randspeech::randspeech(const randspeech &obj){
     filelength = obj.filelength;
     spokenLine = obj.spokenLine;
-    phraseVector = obj.phraseVector;
 }
 
 randspeech::~randspeech(){}
+
+std::string randspeech::getSpeechLine(const std::string &fileLocation){
+    ifstream inputfile(fileLocation);//get the file location
+    inputfile >> filelength; //get length of speech file
+    
+    getline(inputfile, spokenLine);//get rid of the rest of the line
+    getline(inputfile, spokenLine);//get the vocabulary type
+    
+    
+    std::random_device rd;     // only used once to initialise (seed) engine
+    std::mt19937 rng(rd());    // random-number engine used (Mersenne-Twister in this case)
+    std::uniform_int_distribution<int> uni(2,filelength); // guaranteed unbiased
+    int random_integer = uni(rng);
+    
+    string line;
+    for(int i = 0; i <= filelength; ++i){
+        getline(inputfile, line);
+        if(i == random_integer){
+            getline(inputfile, line);
+            break;
+        }
+        
+    }
+    
+    
+    spokenLine += line;
+    
+    cout << spokenLine <<endl;
+    return spokenLine;
+}
