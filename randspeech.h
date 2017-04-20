@@ -1,6 +1,5 @@
 #ifndef RANDSPEECH_DEFINED
 #define RANDSPEECH_DEFINED
-#include <cstdlib>
 #include <iostream>
 #include <fstream>
 #include <random>
@@ -27,6 +26,8 @@ public:
     ~randspeech();
     
     std::string getSpeechLine(const std::string &fileLocation);
+    
+    void writeSpeechLine(std::string writtenLine);
     
     
     

@@ -34,8 +34,15 @@ std::string randspeech::getSpeechLine(const std::string &fileLocation){
         
     }
     
-    
-    spokenLine += line; //concatenate the the vocab type with the line read
+    spokenLine = line; //concatenate the the vocab type with the line read
     
     return spokenLine;
+}
+
+
+void randspeech::writeSpeechLine(std::string writtenLine){
+    string output = writtenLine;
+    ofstream out("output.txt");
+    out << output;
+    
 }
